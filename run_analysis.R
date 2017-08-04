@@ -61,6 +61,8 @@ groupeddata <- group_by(stdmean, subject, activity)
 tidydata <- summarize_all(groupeddata, funs(mean))
 rm(list=setdiff(ls(), c("tidydata", "stdmean"))) #cleans workspace
 
+write.table(stdmean, file = "C:/datos/repos/GettingCleaningDataCourseraProject/stdmean.txt",
+            row.names = FALSE)
 write.table(tidydata, file = "C:/datos/repos/GettingCleaningDataCourseraProject/tidydata.txt",
             row.names = FALSE)
 
